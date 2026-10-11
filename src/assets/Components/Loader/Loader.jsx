@@ -1,5 +1,4 @@
 import React from 'react';
-// Import ስታደርግ FadeLoader ን በ curly braces {} ውስጥ አድርገው
 import { FadeLoader } from 'react-spinners';
 import './Loader.css';
 

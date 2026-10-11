@@ -47,15 +47,11 @@
 
 .nav__items li:hover {
   border: 1px solid white;
-}
-
-/* ===========================================
-   MOBILE RESPONSIVE (TOGGLE MENU)
-   =========================================== */
+} 
 
 @media only screen and (max-width: 768px) {
   .nav__items {
-    display: none; /* በስልክ ላይ በነባሪነት ይደበቃል */
+    display: none;  
     flex-direction: column;
     position: absolute;
     top: 38px;

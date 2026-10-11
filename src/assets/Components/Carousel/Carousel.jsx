@@ -21,7 +21,6 @@ function CarouselEffect() {
         })}
       </ResponsiveCarousel>
 
-      {/* ከታች ካሉት Product Cards ጋር አምሮ እንዲዋሃድ የሚያደርገው የ Amazon Gradient Shadow */}
       <div className="hero__img"></div>
     </div>
   );

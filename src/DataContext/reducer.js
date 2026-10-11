@@ -8,8 +8,7 @@ export const initialState = {
 export const reducer = (state, action) => {
   switch (action.type) {
     case Type.ADD_TO_BASKET: {
-      // 🟢 String() በመጠቀም የ Number እና String ID መጋጨትን እንከላከላለን
-      const existingItem = state.basket.find(
+       const existingItem = state.basket.find(
         (item) => String(item.id) === String(action.item.id)
       );
 
@@ -32,8 +31,7 @@ export const reducer = (state, action) => {
     }
 
     case Type.REMOVE_FROM_BASKET: {
-      // 🟢 እዚህም ID ንጽጽሩ በ String() እንዲሆን ተደርጓል
-      const index = state.basket.findIndex(
+       const index = state.basket.findIndex(
         (item) => String(item.id) === String(action.id)
       );
       let newBasket = [...state.basket];
@@ -45,7 +43,7 @@ export const reducer = (state, action) => {
             amount: newBasket[index].amount - 1,
           };
         } else {
-          newBasket.splice(index, 1); // ብዛቱ 1 ከሆነ ከ Array ውስጥ ሙሉ በሙሉ ያስወግደዋል
+          newBasket.splice(index, 1); 
         }
       }
 
@@ -55,8 +53,7 @@ export const reducer = (state, action) => {
       };
     }
 
-    // 🟢 ክፍያ ከተፈጸመ በኋላ ካርቱን ባዶ ለማድረግ
-    case Type.EMPTY_BASKET:
+     case Type.EMPTY_BASKET:
       return {
         ...state,
         basket: [],

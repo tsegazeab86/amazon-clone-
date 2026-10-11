@@ -7,8 +7,7 @@ import {
 } from "firebase/auth";
 import { DataContext } from "../../../DataContext/DataContext";
 import { Type } from "../../../Utility/action.type";
-// named import በመጠቀም
-import { ClipLoader } from "react-spinners";
+ import { ClipLoader } from "react-spinners";
 import "./Auth.css";
 
 function Auth() {
@@ -24,7 +23,6 @@ function Auth() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // ከ ProtectedRoute የተላከ Message ካለ ለመቀበል
   const navStateData = location.state;
 
   const handleSignIn = async (e) => {
@@ -51,7 +49,6 @@ function Auth() {
 
       setLoading({ ...loading, signIn: false });
 
-      // ወደ ነበረበት ገጽ Redirect ማድረጊያ (ወይም ወደ Home)
       navigate(navStateData?.redirect || "/");
     } catch (err) {
       setError(err.message);
@@ -103,7 +100,6 @@ function Auth() {
       <div className="login__container">
         <h1>Sign-in</h1>
 
-        {/* 🟢 ProtectedRoute የመጣ Redirect Message ካለ እዚህ ያሳያል */}
         {navStateData?.msg && (
           <small
             style={{

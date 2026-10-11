@@ -14,8 +14,7 @@ function ProductDetail() {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // 🟢 1. Context API State እና Dispatch መውሰድ
-  const [state, dispatch] = useContext(DataContext);
+   const [state, dispatch] = useContext(DataContext);
 
   useEffect(() => {
     setLoading(true);
@@ -38,8 +37,7 @@ function ProductDetail() {
       });
   }, [productId]);
 
-  // 🟢 2. Add to Cart የሚሰራበት Function
-  const addToCart = () => {
+   const addToCart = () => {
     if (product) {
       dispatch({
         type: Type.ADD_TO_BASKET,
@@ -96,8 +94,7 @@ function ProductDetail() {
               <p>{product.description}</p>
             </div>
 
-            {/* 🟢 3. onClick={addToCart} ተጨምሯል */}
-            <button className="productDetail__button" onClick={addToCart}>
+             <button className="productDetail__button" onClick={addToCart}>
               Add to Cart
             </button>
           </div>

@@ -8,16 +8,12 @@ import { Type } from '../../../Utility/action.type';
 import './Cart.css';
 
 function Cart() {
-  // 1. DataContext ን በመጠቀም basket እና dispatch ን እንወስዳለን
   const [{ basket, user }, dispatch] = useContext(DataContext);
 
-  // 2. አጠቃላይ የዕቃዎቹን ዋጋ ማስላት
   const total = basket?.reduce((amount, item) => item.price * item.amount + amount, 0);
 
-  // 3. አጠቃላይ የዕቃዎቹን ብዛት (Total Quantity) ማስላት
   const totalItemCount = basket?.reduce((amount, item) => item.amount + amount, 0);
 
-  // 4. Quantity ለመጨመር (+)
   const increment = (item) => {
     dispatch({
       type: Type.ADD_TO_BASKET,
@@ -25,7 +21,6 @@ function Cart() {
     });
   };
 
-  // 5. Quantity ለመቀነስ (-)
   const decrement = (id) => {
     dispatch({
       type: Type.REMOVE_FROM_BASKET,
@@ -49,7 +44,6 @@ function Cart() {
           ) : (
             basket?.map((item) => (
               <section key={item.id} className="cart__product">
-                {/*  የምስል መቀበያ (item.image ወይም item.img ቢሆን እንዲሰራ) */}
                 <img src={item.image || item.img} alt={item.title} />
                 
                 <div className="cart__productDetails">
@@ -58,7 +52,6 @@ function Cart() {
                     <CurrencyFormat amount={item.price} />
                   </p>
                   
-                  {/*  የ (+) እና (-) አዝራሮች ከ onClick ጋር */}
                   <div className="btn__container">
                     <button className="btn" onClick={() => increment(item)}>
                       +
@@ -74,7 +67,6 @@ function Cart() {
           )}
         </div>
 
-        {/* Subtotal Checkout Box */}
         {basket?.length !== 0 && (
           <div className="subtotal">
             <div>

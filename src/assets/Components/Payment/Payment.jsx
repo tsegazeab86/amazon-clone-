@@ -6,7 +6,6 @@ import Layout from "../Layout/Layout";
 import { useNavigate } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import { Type } from "../../../Utility/action.type";
-// 🟢 Firebase v9/v10 Modular imports
 import { db } from "../../../Utility/firebase";
 import { doc, setDoc } from "firebase/firestore";
 import "./Payment.css";
@@ -20,7 +19,6 @@ function Payment() {
   const [cardError, setCardError] = useState(null);
   const [processing, setProcessing] = useState(false);
 
-  // Total quantity and total price
   const totalItem = basket?.reduce((amount, item) => item.amount + amount, 0) || 0;
   const total = basket?.reduce(
     (amount, item) => item.price * item.amount + amount,

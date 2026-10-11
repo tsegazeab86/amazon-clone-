@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import Layout from "../Layout/Layout";
 import { db } from "../../../Utility/firebase";
-// 🟢 Firebase v9 Modular functions
 import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
 import { DataContext } from "../../../DataContext/DataContext";
 import "./Orders.css";
@@ -12,7 +11,6 @@ function Orders() {
 
   useEffect(() => {
     if (user?.uid) {
-      // 🟢 Firebase v9 syntax: query እና onSnapshot በመጠቀም orders ማምጣት
       const ordersRef = collection(db, "users", user.uid, "orders");
       const q = query(ordersRef, orderBy("created", "desc"));
 
