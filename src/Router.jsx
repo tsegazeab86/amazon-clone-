@@ -64,7 +64,7 @@ function AppRouter() {
         />
 
         {/* 404 Route */}
-        <Route path="*" element={<div style={{ padding: "50px", textAlign: "center" }}>Page Not Found (404)</div>} />
+        <Route path="*" element={<div style={{ padding: "50px", textAlign: "center" }}>Page Not Found (404)</div>} />b
       </Routes>
     </Router>
   );

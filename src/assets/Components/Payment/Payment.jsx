@@ -52,8 +52,9 @@ function Payment() {
       setCardError(null);
 
       // 1. Get Client Secret from backend Express app
+      // 🟢 የተስተካከለ፦ Endpoint ወደ "/payment/create" ተቀይሯል (ያለ 's')
       const amountInCents = Math.round(total * 100);
-      const response = await axios.post(`/payments/create?total=${amountInCents}`);
+      const response = await axios.post(`/payment/create?total=${amountInCents}`);
       const clientSecret = response.data?.clientSecret;
 
       if (!clientSecret) {
@@ -76,7 +77,7 @@ function Payment() {
         return;
       }
 
-      // 🟢 3. SAVE ORDER TO FIRESTORE (Firebase v9 Modular Syntax)
+      // 3. SAVE ORDER TO FIRESTORE (Firebase v9 Modular Syntax)
       if (user?.uid) {
         const orderRef = doc(db, "users", user.uid, "orders", paymentIntent.id);
 

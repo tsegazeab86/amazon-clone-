@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
 });
 
 // 🟢 2. POST Payment Intent Route
-app.post("/payments/create", async (req, res) => {
+app.post("/payment/create", async (req, res) => {
   // Query Parameter ወይም Body ከሁለቱም ይቀበላል
   const total = parseInt(req.query.total || req.body.total, 10);
 
